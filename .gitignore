@@ -1,0 +1,28 @@
+# --- Kubernetes credentials: never commit ---
+kubeconfig*
+*.kubeconfig
+.kube/
+
+# --- Real secrets / local environment ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# --- Tool caches ---
+.trivycache/
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+
+# --- OS / editors ---
+.DS_Store
+.vscode/
+.idea/
+
+# --- Scratch space (not evidence) ---
+/tmp/

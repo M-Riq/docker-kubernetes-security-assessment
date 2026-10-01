@@ -1,0 +1,17 @@
+# Gitleaks configuration for REPOSITORY HYGIENE.
+#
+# Every credential used in the lab is FICTIONAL and contains the marker "FAKE-LAB"
+# (e.g. LAB_DB_PASSWORD="FAKE-LAB-postgres-pass"). Those values are allow-listed so
+# the hygiene scan stays clean, while any real-looking secret still raises an alert.
+#
+# During the assessment itself (Phase M) Gitleaks is run with the default ruleset only,
+# so the planted secrets ARE reported as findings.
+
+title = "novapay-lab gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Fictional lab credentials (marker FAKE-LAB)"
+regexes = ['''FAKE-LAB''']
