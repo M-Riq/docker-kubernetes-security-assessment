@@ -1,0 +1,29 @@
+flowchart LR
+  subgraph HOST["macOS host (Intel, Docker Desktop)"]
+    A["Assessor CLI<br/>kubectl / nmap / trivy"]
+  end
+
+  subgraph KIND["kind cluster vapt-lab (Calico CNI)"]
+    subgraph CP["control-plane"]
+      API["kube-apiserver :6443"]
+    end
+    subgraph NSV["ns: vuln-app"]
+      WEB["web<br/>NodePort 30080"] --> BE["backend"] --> DB["db"]
+      SEC[("Secrets<br/>FAKE-LAB")]
+    end
+    subgraph NSO["ns: ops"]
+      DASH["ops-dashboard<br/>NodePort 30090<br/>no auth"]
+      SA["ServiceAccount<br/>over-privileged"]
+    end
+    subgraph NSA["ns: assessor"]
+      AP["assessor pod"]
+    end
+  end
+
+  A -- "127.0.0.1:30080" --> WEB
+  A -- "127.0.0.1:30090" --> DASH
+  A -- "127.0.0.1:6443" --> API
+  DASH -. token .-> SA -. "wide RBAC" .-> API
+  AP -. "no NetworkPolicy" .-> DB
+  AP -.-> DASH
+  BE -. reads .-> SEC
