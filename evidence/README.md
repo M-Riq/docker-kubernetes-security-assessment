@@ -12,3 +12,4 @@ Every significant claim in the report is backed by an item below.
 | # | File | Phase | Finding | Caption | Report section |
 |---|---|---|---|---|---|
 | 000 | `phase-b/000-tool-versions.txt` | B | — | Tool versions used for the assessment | 7 — Tools / Appendix |
+| 001 | `screenshots/001-lab-architecture-diagram.png` | C | — | Lab architecture diagram (kind cluster, namespaces, exposures, attack paths) rendered from `docs/architecture/lab-architecture.mmd` | 3 — Introduction / 4 — Scope |

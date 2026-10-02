@@ -26,4 +26,29 @@ brew install kind kubectl trivy nmap kubescape gitleaks hadolint jq krew
 ```
 
 ## Recorded versions
-_To be filled from `evidence/phase-b/000-tool-versions.txt`._
+
+Source: [evidence 000](../evidence/phase-b/000-tool-versions.txt) — captured 2026-10-02T02:33:25Z
+on Darwin 25.5.0, x86_64. Result: 0 problem(s).
+
+| Tool | Version |
+|---|---|
+| Docker | 29.6.2 (build dfc4efb) |
+| kind | v0.33.0 (go1.27.0, darwin/amd64) |
+| kubectl (client) | v1.36.1 |
+| Trivy | 0.75.0 |
+| Nmap | 7.991 |
+| Kubescape | 4.0.15 |
+| Gitleaks | 8.30.1 |
+| Hadolint | 2.15.1 |
+| curl | 8.7.1 (LibreSSL 3.3.6) |
+| jq | 1.7.1-apple |
+
+Not yet recorded (run inside the cluster or installed later):
+
+| Tool | Recorded in |
+|---|---|
+| Calico | Phase E |
+| Kubernetes server (kind node image) | Phase E |
+| kube-bench | Phase K |
+| kube-hunter | Phase K |
+| rbac-tool / krew | Phase L (not covered by `check-prereqs.sh`) |
