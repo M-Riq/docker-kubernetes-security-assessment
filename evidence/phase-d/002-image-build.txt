@@ -1,0 +1,153 @@
+== Building vapt/web:lab ==
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 478B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.8
+#2 DONE 0.2s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 64B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.8@sha256:d411270700143fa2683cc8264d9fa5d3279fd3b6afff62ae81ea2f9d070e390c
+#5 resolve docker.io/library/python:3.8@sha256:d411270700143fa2683cc8264d9fa5d3279fd3b6afff62ae81ea2f9d070e390c 0.0s done
+#5 DONE 0.1s
+
+#6 [2/5] WORKDIR /app
+#6 CACHED
+
+#7 [3/5] COPY requirements.txt .
+#7 CACHED
+
+#8 [4/5] RUN pip install -r requirements.txt
+#8 CACHED
+
+#9 [5/5] COPY app.py .
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers 0.0s done
+#10 exporting manifest sha256:4e2d0c35407a9ac25e96dea27379fda5fb3b11db769598c057bd6c01f5458867 done
+#10 exporting config sha256:274f5b0aa5dee28060805533fea89d9dc6f71a4c450a2e8c8763466f2422f42f done
+#10 exporting attestation manifest sha256:56839d92ab039a77a7348c073c5bfd82da0c84239f1cec9c71b0e4679a8e6c72
+#10 exporting attestation manifest sha256:56839d92ab039a77a7348c073c5bfd82da0c84239f1cec9c71b0e4679a8e6c72 0.2s done
+#10 exporting manifest list sha256:3c5e683be898ae55dcbcbdf748537d4fa509b4aa10c2c5c699adcaa4e3a61b58
+#10 exporting manifest list sha256:3c5e683be898ae55dcbcbdf748537d4fa509b4aa10c2c5c699adcaa4e3a61b58 0.1s done
+#10 naming to docker.io/vapt/web:lab done
+#10 unpacking to docker.io/vapt/web:lab 0.0s done
+#10 DONE 0.4s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/jj38koi3ojwzkejgfvqc6issh
+== Building vapt/backend:lab ==
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 670B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.9
+#2 DONE 2.2s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 93B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.9@sha256:da5aee29682d12a6649f51c8d6f15b87deb3e6c524b923c41d0cb3304d07c913
+#5 resolve docker.io/library/python:3.9@sha256:da5aee29682d12a6649f51c8d6f15b87deb3e6c524b923c41d0cb3304d07c913 0.0s done
+#5 DONE 0.0s
+
+#6 [3/5] COPY requirements.txt .
+#6 CACHED
+
+#7 [4/5] RUN pip install -r requirements.txt
+#7 CACHED
+
+#8 [2/5] WORKDIR /app
+#8 CACHED
+
+#9 [5/5] COPY . .
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers 0.0s done
+#10 exporting manifest sha256:7e11febaaa0d5f09616ed9deead8aef9de65e04272d623ca9ee173f4fddd1fa1 done
+#10 exporting config sha256:b075adb9049ad20758bb787d757b82d7b7778252b56b2bcf81bdd58d0bda7ba6 done
+#10 exporting attestation manifest sha256:a60aab3a832f9aaa08a6aa400b878a7a9956fcc64efa506dcbcb5aeb6f3d28c8
+#10 exporting attestation manifest sha256:a60aab3a832f9aaa08a6aa400b878a7a9956fcc64efa506dcbcb5aeb6f3d28c8 0.0s done
+#10 exporting manifest list sha256:f96204e81ffe53974708e66a1158f7fb9575ce6ccc8369d0eab6b9f7f8ae0bc0 0.0s done
+#10 naming to docker.io/vapt/backend:lab done
+#10 unpacking to docker.io/vapt/backend:lab 0.0s done
+#10 DONE 0.2s
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "DB_PASSWORD") (line 6)
+ - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "API_KEY") (line 6)
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/v9nfp6juy4q7voqvkr6mmfx15
+== Building vapt/ops-dashboard:lab ==
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 233B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 0.4s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 63B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.11-slim@sha256:bab1b7ef4b450c81002278d035eff85ebe394ae94df904f7a3ba14f7e16e487b
+#5 resolve docker.io/library/python:3.11-slim@sha256:bab1b7ef4b450c81002278d035eff85ebe394ae94df904f7a3ba14f7e16e487b 0.0s done
+#5 DONE 0.0s
+
+#6 [3/5] COPY requirements.txt .
+#6 CACHED
+
+#7 [4/5] RUN pip install --no-cache-dir -r requirements.txt
+#7 CACHED
+
+#8 [2/5] WORKDIR /app
+#8 CACHED
+
+#9 [5/5] COPY app.py .
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers done
+#10 exporting manifest sha256:88673ec2a6c1f7cbc6183d4d7c73af02741df844ffdaf3270e3c303c09d7942d done
+#10 exporting config sha256:439336b3ae4cec356540908deb8ba21907231fd1d31af2953b9e13b862986b61 done
+#10 exporting attestation manifest sha256:5d2686d7f9f9d2b33de8a3893abc82fd9d9ba145bd791a6f4ffb1f2059f23d8d
+#10 exporting attestation manifest sha256:5d2686d7f9f9d2b33de8a3893abc82fd9d9ba145bd791a6f4ffb1f2059f23d8d 0.0s done
+#10 exporting manifest list sha256:3053ee5110fa68f0f82e59ef30c4af46d4d53b1270991f6d4a8be312a8a12423 0.0s done
+#10 naming to docker.io/vapt/ops-dashboard:lab done
+#10 unpacking to docker.io/vapt/ops-dashboard:lab 0.0s done
+#10 DONE 0.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/iv6msstjhxww3j97lql5gift9
+== Pulling upstream db image ==
+13: Pulling from library/postgres
+Digest: sha256:4689940c683801b4ab839ab3b0a0a3555a5fe425371422310944e89eca7d8068
+Status: Image is up to date for postgres:13
+docker.io/library/postgres:13
+== Result ==
+vapt/ops-dashboard:lab  3053ee5110fa  228MB
+vapt/backend:lab  f96204e81ffe  1.62GB
+vapt/web:lab  3c5e683be898  1.47GB
+postgres:13  4689940c6838  624MB
