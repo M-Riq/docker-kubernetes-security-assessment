@@ -1,0 +1,14 @@
+== Assessment workstation prerequisites (2026-10-02T02:33:25Z) ==
+OS: Darwin 25.5.0 | CPU architecture: x86_64
+[OK]      docker     Docker version 29.6.2, build dfc4efb
+[OK]      kind       kind v0.33.0 go1.27.0 darwin/amd64
+[OK]      kubectl    Client Version: v1.36.1
+[OK]      trivy      Version: 0.75.0
+[OK]      nmap       Nmap version 7.991 ( https://nmap.org )
+[OK]      kubescape  Your current version is: 4.0.15
+[OK]      gitleaks   8.30.1
+[OK]      hadolint   Haskell Dockerfile Linter 2.15.1
+[OK]      curl       curl 8.7.1 (x86_64-apple-darwin25.0) libcurl/8.7.1 (SecureTransport) LibreSSL/3.3.6 zlib/1.2.12 nghttp2/1.68.1
+[OK]      jq         jq-1.7.1-apple
+[OK]      Docker daemon is running
+== Result: 0 problem(s) ==
