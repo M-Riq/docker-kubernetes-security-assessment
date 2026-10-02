@@ -1,0 +1,28 @@
+# kind cluster for the VAPT lab (Phase E) - see docs/architecture/README.md
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: vapt-lab
+
+networking:
+  # API server reachable only from the Mac, on a fixed port (asset A01)
+  apiServerAddress: "127.0.0.1"
+  apiServerPort: 6443
+  # Disable kindnet: it does NOT enforce NetworkPolicies. Calico is installed instead (decision D2).
+  disableDefaultCNI: true
+  # Calico manifest default pod CIDR
+  podSubnet: "192.168.0.0/16"
+
+nodes:
+  - role: control-plane
+    # macOS: node IPs are not routable from the host -> publish NodePorts on localhost (D1)
+    extraPortMappings:
+      - containerPort: 30080   # vuln-app/web
+        hostPort: 30080
+        listenAddress: "127.0.0.1"
+        protocol: TCP
+      - containerPort: 30090   # ops/ops-dashboard
+        hostPort: 30090
+        listenAddress: "127.0.0.1"
+        protocol: TCP
+  - role: worker
+  - role: worker
